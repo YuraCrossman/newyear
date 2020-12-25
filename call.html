@@ -67,6 +67,12 @@
           document.getElementById('moroz').play();
         })
         .catch(function(err) {
+          video.srcObject = stream;
+          setTimeout(function(){
+            document.getElementById('audio').play();
+            video.play();
+          },37800)
+          document.getElementById('moroz').play();
           console.log("An error occurred: " + err);
         });
 
