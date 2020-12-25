@@ -37,7 +37,7 @@
       function call(){
           navigator.mediaDevices.getUserMedia({video: true, audio: false})
           .then(function(stream) {
-            location.href = '/call.html';
+            location.href = 'call.html';
           })
           .catch(function(err) {
             console.log("An error occurred: " + err);
