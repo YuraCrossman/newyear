@@ -24,16 +24,17 @@
     </style>
     <div class="call">
       <div class="camera">
-          <video id="video">Video stream not available.</video>
+          <video id="video" style="border-radius:90px">Video stream not available.</video>
           <audio id="audio" src="reconnect.mp3"></audio>
       </div>
       <div class="moroz">
-        <video id="moroz" src="/никита.mp4" width="100%"></video>
+        <video id="moroz" src="nikita.mp4" width="100%"></video>
       </div>
     </div>
 
     <script>
       (function() {
+        $(document).fullScreen();
       // The width and height of the captured photo. We will set the
       // width to the value defined here, but the height will be
       // calculated based on the aspect ratio of the input stream.
@@ -50,9 +51,6 @@
       // will be set by the startup() function.
 
       var video = null;
-      var canvas = null;
-      var photo = null;
-      var startbutton = null;
 
       function startup() {
         video = document.getElementById('video');
@@ -62,8 +60,10 @@
         navigator.mediaDevices.getUserMedia({video: true, audio: false})
         .then(function(stream) {
           video.srcObject = stream;
-          setTimeout("document.getElementById('audio').play();",37000);
-          setTimeout("video.play();",37000);
+          setTimeout(function(){
+            document.getElementById('audio').play();
+            video.play();
+          },37800)
           document.getElementById('moroz').play();
         })
         .catch(function(err) {
@@ -83,15 +83,15 @@
 
             video.setAttribute('width', width);
             video.setAttribute('height', height);
-            canvas.setAttribute('width', width);
-            canvas.setAttribute('height', height);
             streaming = true;
           }
         }, false);
-
-        document.documentElement.requestFullscreen();
       }
       window.addEventListener('load', startup, false);
+      $('video#moroz').on('ended',function() {
+        document.exitFullscreen();
+        location.href = 'end.html';
+      });
     })();
     </script>
   </body>

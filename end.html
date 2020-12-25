@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Дедушка Мороз</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" charset="utf-8"></script>
+    <script src="/jquery.fullscreen-min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <style media="screen">
+      body{
+        margin: 15px;
+        margin-top: 150px;
+      }
+      #moroz{
+        width:20%;
+        border-radius: 40%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+      }
+      #call{
+        display: block;
+        text-align: center;
+      }
+      #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+      }
+    </style>
+        <video autoplay muted loop src="https://static.videezy.com/system/resources/previews/000/017/884/original/christmas1_5.mp4" id="myVideo"></video>
+      <img id="moroz" src="moroz~1.png" class="align-items-center"><br>
+      <div id="call">
+        <h2>Звонок завершён</h2>
+      </div>
+  </body>
+</html>
