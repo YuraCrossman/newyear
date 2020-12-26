@@ -58,7 +58,7 @@
         audi.loop=true;
       })();
       function call(){
-          $(document).fullscreen();
+          $('body').fullscreen();
           navigator.mediaDevices.getUserMedia({video: true, audio: false})
           .then(function(stream) {
             location.href = 'call.html';
