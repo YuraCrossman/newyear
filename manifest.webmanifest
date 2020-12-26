@@ -1,0 +1,1 @@
+{"name":"Дедушка Мороз","short_name":"Дедушка Мороз","description":"\/","scope":"\/","theme_color":"#ff3900","background_color":"#ffffff","display":"standalone","start_url":"\/?mode=standalone","icons":[{"src":"\/moroz.png","sizes":"992x992","type":"image\/png"},"params":{"title":"title","text":"description","url":"url"},"gcm_user_visible_only":true}
